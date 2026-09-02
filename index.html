@@ -118,30 +118,55 @@
         </form>
     </div>
 
-    <script>
-        const scriptURL = https://script.google.com/macros/s/AKfycby5oP3OBOefkSNpKaD2IZ5r_TF3mynn54oVWpWecTHx3T4xtoatBwsvJGH-id6fmtLE/exec
+   <script>
+    const scriptURL = https://script.google.com/macros/s/AKfycbwROxd5DcqjOGflv_RZH7RDh79fcHuqoAn5yrZs1ZyWUjV0yWMgedT00NkMWsvHt8ZY/exec'MASUKKAN_URL_WEB_APP_BARU_ANDA';
+    const form = document.getElementById('monevForm');
 
-        const form = document.getElementById('monevForm');
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            const btn = document.getElementById('submitBtn');
-            btn.disabled = true;
-            btn.textContent = 'Sedang Mengirim...';
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true;
+        btn.textContent = 'Sedang Mengirim...';
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    alert('Terima kasih! Formulir berhasil dikirim.');
-                    form.reset();
-                    btn.disabled = false;
-                    btn.textContent = 'Kirim Formulir';
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    alert('Terjadi kesalahan, silahkan coba lagi.');
-                    btn.disabled = false;
-                    btn.textContent = 'Kirim Formulir';
-                });
+        // Mengubah data form menjadi objek JSON
+        const formData = new FormData(form);
+        const dataObj = {};
+        formData.forEach((value, key) => {
+            // Menangani checkbox jika ada banyak pilihan
+            if (dataObj[key]) {
+                if (!Array.isArray(dataObj[key])) {
+                    dataObj[key] = [dataObj[key]];
+                }
+                dataObj[key].push(value);
+            } else {
+                dataObj[key] = value;
+            }
         });
-    </script>
+
+        // Ubah array checkbox menjadi teks koma
+        if (dataObj['sosmed[]']) {
+            dataObj['sosmed'] = dataObj['sosmed[]'].join(', ');
+            delete dataObj['sosmed[]'];
+        }
+
+        fetch(scriptURL, {
+            method: 'POST',
+            body: JSON.stringify(dataObj)
+        })
+        .then(response => response.json())
+        .then(result => {
+            alert('Terima kasih! Formulir berhasil dikirim.');
+            form.reset();
+            btn.disabled = false;
+            btn.textContent = 'Kirim Formulir';
+        })
+        .catch(error => {
+            console.error('Error!', error);
+            alert('Terjadi kesalahan, silahkan coba lagi.');
+            btn.disabled = false;
+            btn.textContent = 'Kirim Formulir';
+        });
+    });
+</script>
 </body>
 </html>
