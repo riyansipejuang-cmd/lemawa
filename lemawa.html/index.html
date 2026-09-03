@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instrumen Monev Ormawa 2025</title>
     <style>
-        /* Anda bisa mempercantik tampilannya dengan CSS di sini agar beda dari Google Form biasa */
+        .header-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header-image img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
         body { font-family: Arial, sans-serif; background: #f4f7f6; margin: 0; padding: 20px; }
         .container { max-width: 800px; background: white; padding: 30px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         fieldset { border: 1px solid #ccc; padding: 20px; margin-bottom: 20px; border-radius: 6px; }
@@ -18,134 +27,111 @@
 </head>
 <body>
 
-    <div class="container">
-        <h2>Instrumen Monev Ormawa 2025</h2>
-       <form id="monevForm" method="POST">
+<div class="container">
+    <div class="header-image">
+        <img src="lemawa.jpg" alt="Banner Sistem Monev UNIMUDA">
+    </div>
+
+    <h2>Instrumen Monev Ormawa 2025</h2>
+    <form id="monevForm" method="POST">
+        
+        <!-- Data Diri dan Profil Ormawa -->
+        <fieldset>
+            <legend>Data Diri dan Profil Ormawa</legend>
             
-            <!-- Data Diri dan Profil Ormawa -->
-            <fieldset>
-                <legend>Data Diri dan Profil Ormawa</legend>
-                
-                <label for="nama">Tuliskan Nama lengkap anda?</label>
-                <input type="text" id="nama" name="nama" required>
+            <label for="nama">Tuliskan Nama lengkap anda?</label>
+            <input type="text" id="nama" name="nama" required>
+            
+            <label for="prodi">Dari prodi mana anda berasal?</label>
+            <input type="text" id="prodi" name="prodi" required>
 
-                <label for="semester">Semester berapa anda saat ini?</label>
-                <input type="number" id="semester" name="semester" required>
+            <label for="semester">Semester berapa anda saat ini?</label>
+            <input type="number" id="semester" name="semester" required>
 
-                <label for="prodi">Dari prodi mana anda berasal?</label>
-                <select id="prodi" name="prodi">
-                    <option value="">Pilih Program Studi</option>
-                    <option value="Pendidikan Biologi">Pendidikan Biologi</option>
-                    <option value="Pendidikan Bahasa Indonesia">Pendidikan Bahasa Indonesia</option>
-                    <option value="Farmasi">Farmasi</option>
-                    <option value="Teknik Sipil">Teknik Sipil</option>
-                    <option value="Manajemen">Manajemen</option>
-                </select>
+            <label for="jabatan">Apa jabatan anda saat ini?</label>
+            <select id="jabatan" name="jabatan">
+                <option value="Ketua/Wakil Ketua">Ketua/Wakil Ketua</option>
+                <option value="Sekretaris">Sekretaris</option>
+                <option value="Bendahara">Bendahara</option>
+            </select>
 
-                <label for="jabatan">Apa jabatan anda saat ini?</label>
-                <select id="jabatan" name="jabatan">
-                    <option value="Ketua/Wakil Ketua">Ketua/Wakil Ketua</option>
-                    <option value="Sekretaris">Sekretaris</option>
-                    <option value="Bendahara">Bendahara</option>
-                </select>
+            <label for="whatsapp">Tuliskan nomor hp/wa anda!</label>
+            <input type="text" id="whatsapp" name="whatsapp" required>
 
-                <label for="whatsapp">Tuliskan nomor hp/wa anda!</label>
-                <input type="text" id="whatsapp" name="whatsapp" required>
+            <label for="jenis_org">Apa jenis organisasi anda?</label>
+            <select id="jenis_org" name="jenis_org">
+                <option value="Himaprodi">Himaprodi</option>
+                <option value="UKM">UKM</option>
+                <option value="Ortom">Ortom</option>
+            </select>
 
-                <label for="jenis_org">Apa jenis organisasi anda?</label>
-                <select id="jenis_org" name="jenis_org">
-                    <option value="Himaprodi">Himaprodi</option>
-                    <option value="UKM">UKM</option>
-                    <option value="Ortom">Ortom</option>
-                </select>
+            <label for="lama_menjabat">Sudah berapa lama anda menjabat?</label>
+            <select id="lama_menjabat" name="lama_menjabat">
+                <option value="< 1 Tahun">&lt; 1 Tahun</option>
+                <option value="> 1 Tahun">&gt; 1 Tahun</option>
+            </select>
 
-                <label for="lama_menjabat">Sudah berapa lama anda menjabat?</label>
-                <select id="lama_menjabat" name="lama_menjabat">
-                    <option value="< 1 Tahun">&lt; 1 Tahun</option>
-                    <option value="> 1 Tahun">&gt; 1 Tahun</option>
-                </select>
+            <label for="cara_pilih">Bagaimana Anda terpilih?</label>
+            <select id="cara_pilih" name="cara_pilih">
+                <option value="Penunjukan">Penunjukan</option>
+                <option value="PLT">PLT</option>
+                <option value="Musyawarah">Musyawarah</option>
+            </select>
 
-                <label for="cara_pilih">Bagaimana Anda terpilih?</label>
-                <select id="cara_pilih" name="cara_pilih">
-                    <option value="Penunjukan">Penunjukan</option>
-                    <option value="PLT">PLT</option>
-                    <option value="Musyawarah">Musyawarah</option>
-                </select>
+            <label for="sejarah">Dapatkah anda menceritakan sejarah singkat dari organisasi anda?</label>
+            <textarea id="sejarah" name="sejarah" rows="3"></textarea>
 
-                <label for="sejarah">Dapatkah anda menceritakan sejarah singkat dari organisasi anda?</label>
-                <textarea id="sejarah" name="sejarah" rows="3"></textarea>
+            <label for="visi_misi">Apa visi, misi, dan tujuan dari organisasi anda?</label>
+            <textarea id="visi_misi" name="visi_misi" rows="3"></textarea>
 
-                <label for="visi_misi">Apa visi, misi, dan tujuan dari organisasi anda?</label>
-                <textarea id="visi_misi" name="visi_misi" rows="3"></textarea>
+            <label for="sop">Apakah organisasi anda memiliki SOP dan AD-ART?</label>
+            <select id="sop" name="sop">
+                <option value="Iya">Iya</option>
+                <option value="Tidak">Tidak</option>
+                <option value="Belum Buat">Belum Buat</option>
+                <option value="Draft">Draft</option>
+            </select>
+        </fieldset>
 
-                <label for="sop">Apakah organisasi anda memiliki SOP dan AD-ART?</label>
-                <select id="sop" name="sop">
-                    <option value="Iya">Iya</option>
-                    <option value="Tidak">Tidak</option>
-                    <option value="Belum Buat">Belum Buat</option>
-                    <option value="Draft">Draft</option>
-                </select>
-            </fieldset>
+        <!-- Data Administrasi Ormawa -->
+        <fieldset>
+            <legend>Data Administrasi Ormawa (Upload Berkas)</legend>
 
-            <!-- Data Administrasi Ormawa -->
-            <fieldset>
-                <legend>Data Administrasi Ormawa (Upload Berkas)</legend>
+            <label for="lpj">Upload LPJ Kegiatan 1 tahun terakhir:</label>
+            <input type="file" id="lpj" name="lpj">
 
-                <label for="lpj">Upload LPJ Kegiatan 1 tahun terakhir:</label>
-                <input type="file" id="lpj" name="lpj">
+            <label for="sk_pengurus">Upload SK Pengurus Terbaru:</label>
+            <input type="file" id="sk_pengurus" name="sk_pengurus">
 
-                <label for="sk_pengurus">Upload SK Pengurus Terbaru:</label>
-                <input type="file" id="sk_pengurus" name="sk_pengurus">
+            <label for="logo">Upload Logo Ormawa:</label>
+            <input type="file" id="logo" name="logo">
 
-                <label for="logo">Upload Logo Ormawa:</label>
-                <input type="file" id="logo" name="logo">
+            <label for="surat_keluar">Upload File Surat Keluar Terakhir:</label>
+            <input type="file" id="surat_keluar" name="surat_keluar">
+        </fieldset>
 
-                <label for="surat_keluar">Upload File Surat Keluar Terakhir:</label>
-                <input type="file" id="surat_keluar" name="surat_keluar">
-            </fieldset>
+        <!-- Data Kepuasan Ormawa -->
+        <fieldset>
+            <legend>Data Kepuasan Ormawa</legend>
+            <label for="untuk_lemawa">Untuk Lemawa:</label>
+            <textarea id="untuk_lemawa" name="untuk_lemawa" rows="2"></textarea>
 
-            <!-- Data Kepuasan Ormawa -->
-            <fieldset>
-                <legend>Data Kepuasan Ormawa</legend>
-                <label for="untuk_lemawa">Untuk Lemawa:</label>
-                <textarea id="untuk_lemawa" name="untuk_lemawa" rows="2"></textarea>
+            <label for="untuk_warek3">Untuk Warek III:</label>
+            <textarea id="untuk_warek3" name="untuk_warek3" rows="2"></textarea>
+            
+            <label for="untuk_fakultas">Fakultas:</label>
+            <textarea id="untuk_fakultas" name="untuk_fakultas" rows="2"></textarea>
+            
+            <label for="untuk_prodi">Prodi:</label>
+            <textarea id="untuk_prodi" name="untuk_prodi" rows="2"></textarea>
+        </fieldset>
+            
+        <button type="submit" id="submitBtn">Kirim Formulir</button>
+    </form>
+</div>
 
-                <label for="untuk_warek3">Untuk Warek III:</label>
-                <textarea id="untuk_warek3" name="untuk_warek3" rows="2"></textarea>
-				
-				<label for="untuk_warek3">Fakultas:</label>
-                <textarea id="untuk_warek3" name="untuk_warek3" rows="2"></textarea>
-				
-				<label for="untuk_warek3">Prodi:</label>
-                <textarea id="untuk_warek3" name="untuk_warek3" rows="2"></textarea>
-            </fieldset>
-				
-            <button type="submit" id="submitBtn">Kirim Formulir</button>
-        </form>
-    </div>
-
-	 <fieldset>
-                <legend>Data Kepuasan Ormawa</legend>
-                <label for="untuk_lemawa">Untuk Lemawa:</label>
-                <textarea id="untuk_lemawa" name="untuk_lemawa" rows="2"></textarea>
-
-                <label for="untuk_warek3">Untuk Warek III:</label>
-                <textarea id="untuk_warek3" name="untuk_warek3" rows="2"></textarea>
-                
-                <label for="untuk_fakultas">Fakultas:</label>
-                <textarea id="untuk_fakultas" name="untuk_fakultas" rows="2"></textarea>
-                
-                <label for="untuk_prodi">Prodi:</label>
-                <textarea id="untuk_prodi" name="untuk_prodi" rows="2"></textarea>
-            </fieldset>
-                
-            <button type="submit" id="submitBtn">Kirim Formulir</button>
-        </form>
-    </div>
-
-   <script>
-    // PERHATIKAN: URL harus diapit tanda petik satu ('')
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwFyMH_ZQqKNd-8lxuV-_cH3fyDybLVMdRCGI0rAeIr-PdfxHECBFIUKgatWUXELTVA/exec';
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzbAWtY_jNHw1yGXaP32qys5HWC7PWWXA4RgRuy4Z_W9nIzhaAMsDIH6DL9WsRjk59D/exec';
     const form = document.getElementById('monevForm');
 
     form.addEventListener('submit', e => {
